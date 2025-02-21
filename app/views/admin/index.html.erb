@@ -1,0 +1,13 @@
+<div class="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg text-center">
+  <!-- Admin Info -->
+  <p class="text-gray-600 text-sm mb-4">
+    <strong class="text-gray-800">Admin:</strong> <%= current_user.email %>
+  </p>
+
+  <!-- Section Title -->
+  <h1 class="text-3xl font-bold text-gray-800 mb-6">Create a New Facebook Group</h1>
+
+  <!-- New Group Link -->
+  <%= link_to "Create New Group", fb_groups_path, 
+    class: "px-5 py-3 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-lg shadow transition" %>
+</div>

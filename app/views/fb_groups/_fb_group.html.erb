@@ -1,0 +1,21 @@
+<div id="<%= dom_id fb_group %>" class="max-w-2xl mx-auto p-6 bg-white shadow-lg rounded-lg border border-gray-200">
+  <h2 class="text-2xl font-bold text-gray-800 mb-4">Facebook Group Details</h2>
+
+  <div class="mb-4">
+    <strong class="block text-gray-700 text-lg font-semibold">Title:</strong>
+    <p class="text-gray-800 text-base"><%= fb_group.title %></p>
+  </div>
+
+  <div class="mb-4">
+    <strong class="block text-gray-700 text-lg font-semibold">Description:</strong>
+    <p class="text-gray-800 text-base mb-2"><%= fb_group.description %></p>
+    <%= link_to "Go To Link", fb_group.description, target: "_blank", rel: "noopener noreferrer",
+      class: "inline-block px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
+    %>
+  </div>
+
+  <div class="border-t border-gray-300 pt-4">
+    <strong class="block text-gray-700 text-lg font-semibold">User:</strong>
+    <p class="text-gray-800 text-base"><%= current_user.email %></p>
+  </div>
+</div>

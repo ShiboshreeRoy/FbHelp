@@ -1,0 +1,17 @@
+<% content_for :title, "Editing Fb Group" %>
+
+<div class="max-w-2xl flex-col  justify-center  mx-auto p-6 bg-white rounded-lg shadow-lg">
+  <h1 class="text-3xl font-bold text-gray-800 mb-6">Edit Facebook Group</h1>
+
+  <!-- Render Form Partial -->
+  <%= render "form", fb_group: @fb_group %>
+
+  <!-- Action Buttons -->
+  <div class="mt-6 flexspace-x-4">
+    <%= link_to "View Group", @fb_group, 
+      class: "px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-lg shadow transition" %>
+
+    <%= link_to "Back to Groups", fb_groups_path, 
+      class: "px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium rounded-lg shadow transition" %>
+  </div>
+</div>

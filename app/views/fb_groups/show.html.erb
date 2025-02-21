@@ -1,0 +1,32 @@
+<% content_for :title, "Showing Facebook Group" %>
+
+<div class="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg">
+  <% if notice.present? %>
+    <p class="py-2 px-4 bg-green-50 text-green-600 font-medium rounded-md mb-5" id="notice">
+      <%= notice %>
+    </p>
+  <% end %>
+
+  <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Facebook Group Details</h2>
+
+  <!-- Render Group Info -->
+  <div class="p-4">
+    <%= render @fb_group %>
+  </div>
+
+  <!-- Action Buttons -->
+  <% if current_user.admin? %>
+  <div class="mt-6 flex flex-wrap gap-4">
+    <%= link_to "Edit Group", edit_fb_group_path(@fb_group), 
+      class: "px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-lg shadow transition" %>
+
+    <%= button_to "Delete Group", @fb_group, method: :delete, 
+      class: "px-4 py-2 bg-red-600 hover:bg-red-500 text-white font-medium rounded-lg shadow transition", 
+      data: { turbo_confirm: "Are you sure?" } %>
+
+    <% else %>
+      <%= link_to "Back to Groups", fb_groups_path, 
+      class: "px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium rounded-lg shadow transition" %>
+      <% end %>
+  </div>
+</div>
