@@ -12,7 +12,7 @@
     <h2 class="text-3xl font-bold text-gray-800">All Facebook Groups</h2>
   </div>
 
-  <% if current_user%>
+  <% if current_user.admin?%>
   <div class="flex justify-between items-center mb-6">
     <h2 class="text-3xl font-bold text-gray-800">Facebook Groups</h2>
     <%= link_to "New Fb Group", new_fb_group_path, 
@@ -29,7 +29,7 @@
             <p class="text-gray-600 text-sm"><%= fb_group.description.truncate(80) %></p>
           </div>
           <div class="flex space-x-2">
-           <% if current_user%>
+           <% if current_user.admin?%>
            <%= link_to "Show", fb_group, 
               class: "px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-md font-medium transition" %>
             <%= link_to "Edit", edit_fb_group_path(fb_group), 
@@ -52,5 +52,9 @@
 
 
 <div class="flex-col justify-center">
-  <%= link_to "Home", { controller: "home", action: "index", page: 1, data: "Advatiser/Publisher" } %>
+ <% if current_user.admin?%>
+  <%= link_to "Advatiser Accunt", { controller: "home", action: "index", page: 1, data: "Advatiser Accunt" } %>
+  <% else %>
+   <%= link_to "Publisher Accunt", { controller: "home", action: "index", page: 1, data: "Publishar Accunt" } %>
+   <% end %>
 </div>

@@ -1,4 +1,5 @@
 class FbGroupsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_fb_group, only: %i[ show edit update destroy ]
 
   # GET /fb_groups or /fb_groups.json
