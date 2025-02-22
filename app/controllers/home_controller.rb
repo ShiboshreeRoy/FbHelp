@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    urrent_user.admin!
+    current_user.admin!
   end
 end
