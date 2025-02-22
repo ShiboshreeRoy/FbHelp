@@ -29,7 +29,7 @@
             <p class="text-gray-600 text-sm"><%= fb_group.description.truncate(80) %></p>
           </div>
           <div class="flex space-x-2">
-           <% if current_user.admin?%>
+           <% if current_user%>
            <%= link_to "Show", fb_group, 
               class: "px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-md font-medium transition" %>
             <%= link_to "Edit", edit_fb_group_path(fb_group), 
@@ -52,5 +52,5 @@
 
 
 <div class="flex-col justify-center">
-  <%= link_to "Home", { controller: "home", action: "index", page: 1, data: "Main Home page" } %>
+  <%= link_to "Home", { controller: "home", action: "index", page: 1, data: "Advatiser/Publisher" } %>
 </div>
