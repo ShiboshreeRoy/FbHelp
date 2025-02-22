@@ -12,7 +12,7 @@
     <h2 class="text-3xl font-bold text-gray-800">All Facebook Groups</h2>
   </div>
 
-  <% if current_user.admin?%>
+  <% if current_user%>
   <div class="flex justify-between items-center mb-6">
     <h2 class="text-3xl font-bold text-gray-800">Facebook Groups</h2>
     <%= link_to "New Fb Group", new_fb_group_path, 
